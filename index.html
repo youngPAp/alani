@@ -3,31 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dear alaniii</title>
+    <title>Dear Alaniii</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #ffe4e1;
             text-align: center;
             padding: 20px;
             margin: 0;
             color: #333;
+            background-color: #ffe4e1;
+            animation: blink-bg 1s infinite alternate;
         }
+        
+        @keyframes blink-bg {
+            0% { background-color: #ffe4e1; }
+            100% { background-color: #ffc0cb; } /* Warna pink lebih terang */
+        }
+
         h1 {
             color: #d14f4f;
             font-size: 48px;
             margin-bottom: 20px;
         }
+        
         p {
             font-size: 24px;
             color: #555;
             margin-top: 0;
         }
+        
         .heart-icon {
             font-size: 100px;
             color: #e74c3c;
             margin: 20px;
         }
+        
         .message {
             background-color: #fff;
             padding: 20px;
@@ -36,25 +46,65 @@
             width: 60%;
             margin: 0 auto;
         }
-        .message p {
+        
+        .button {
+            margin-top: 20px;
+            background-color: #d14f4f;
+            color: white;
+            padding: 10px 20px;
             font-size: 20px;
-            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
         }
-        .footer {
-            margin-top: 40px;
-            font-size: 18px;
-            color: #d14f4f;
+        
+        .button:hover {
+            background-color: #b13d3d;
+        }
+        
+        /* Loading spinner */
+        .loading {
+            display: none;
+            margin: 20px auto;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #d14f4f;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <h1>untuk alanii</h1>
+    <h1>Untuk Alanii</h1>
     <div class="heart-icon">❤️</div>
     <div class="message">
-        <p>Sayangku, semoga hari-harimu penuh dengan kebahagiaan dan senyuman. Aku akan selalu mencintaimu tanpa henti, tidak peduli apa yang terjadi. Terima kasih sudah menjadi bagian terindah dalam hidupku. Selalu ada di hatiku, kekasihku.</p>
+        <p>hai alani, tetap semangat ya semoga hari-harimu penuh dengan kebahagiaan dan senyuman. aku akan selalu mencintaimu tanpa henti, tidak peduli apa yang terjadi. terima kasih sudah mau nerima aku.kamu selalu ada di hatiku.</p>
     </div>
-    <div class="footer">
-        <p>glennn</p>
+    
+    <button class="button" onclick="showLoading()">PENCETT INII</button>
+    
+    <div class="loading" id="loading"></div>
+
+    <div class="footer" style="margin-top: 40px; font-size: 18px; color: #d14f4f;">
+        <p>hehehehe</p>
     </div>
+
+    <script>
+        function showLoading() {
+            document.querySelector('.button').style.display = 'none'; // Hilangkan tombol
+            document.getElementById('loading').style.display = 'block'; // Munculkan efek loading
+            
+            setTimeout(() => {
+                window.location.href = 'goodnight.html'; // Redirect setelah loading
+            }, 2000); // Loading selama 2 detik sebelum pindah halaman
+        }
+    </script>
 </body>
 </html>
